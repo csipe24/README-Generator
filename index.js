@@ -1,13 +1,6 @@
 const fs = require("fs");
 const inquirer = require("inquirer");
-const genMark = require("./utils/generateMarkdown.js");
-
-// At least one badge
-
-// * Tests
-// * User GitHub profile picture
-// * User GitHub email
-
+const genMark = require("./utils/generateMarkdown");
 
 const questions = [
   {
@@ -24,75 +17,67 @@ const questions = [
 
   {
     type: "input",
-    message: "List the Table of Contents",
-    name: "Table Of Contents"
-  },
-
-  {
-    type: "input",
     message: "Describe how to install the App",
     name: "Installation"
   },
 
-  {
-    type: "input",
-    message: "Describe how the usage of the App",
-    name: "Usage"
-  },
+  // {
+  //   type: "input",
+  //   message: "Describe how the usage of the App",
+  //   name: "Usage"
+  // },
 
-  {
-    type: "input",
-    message: "",
-    name: "License"
-  },
+  // {
+  //   type: "list",
+  //   message: "",
+  //   choices: [],
+  //   name: "License"
+  // },
 
-  {
-    type: "input",
-    message: "List the Names of the Contributors",
-    name: "Contributors"
-  },
+  // {
+  //   type: "input",
+  //   message: "List the Names of the Contributors",
+  //   name: "Contributors"
+  // },
 
-  {
-    type: "input",
-    message: "",
-    name: "Tests"
-  },
+  // {
+  //   type: "input",
+  //   message: "Describe the kinds of tests created for this Application",
+  //   name: "Tests"
+  // },
+
+  // {
+  //   type: "input",
+  //   message: "What is your GitHub Username?",
+  //   name: "Github"
+  // },
+
+    // {
+  //   type: "input",
+  //   message: "What is your email?",
+  //   name: "Email"
+  // },
 ];
 
 function writeToFile(fileName, data) {
-}
+  console.log("Write File!");
+  fs.writeFile(fileName, genMark(data), function(err){
+    if(err)
+    {console.log(err)}
+    else 
+    {console.log("Success!")};
+  });
+    };
 
-function init() {
-inquirer.prompt(questions)
-        .then( (response) => {
-            console.log(response);
-            generateMarkdown(response);
-});
+function init() {  
+inquirer.prompt(  questions )
+        .then( (  response  ) => {
+            writeToFile("README.md", response);
+        } )
 };
 
 init();
 
-//  fs.writeFile("log.json", JSON.stringify(reponse, null, "\t"), function(err){
-//   if(err){console.log(err);}
-//   else {console.log("success")
-
-
-// At least one badge
-// * Project title
-// * Description
-// * Table of Contents
-// * Installation
-// * Usage
-// * License
-// * Contributing
-// * Tests
-// * User GitHub profile picture
-// * User GitHub email
-
-
-
-
-// 1. Create JSON File.
 
 // NPM init
 // Dafault folder name
@@ -140,3 +125,4 @@ init();
 // * Repo **MUST** include `package.json` with required dependencies. (Hint: Run `npm init` when you first setup the project before installing any dependencies.)
 
 // * Include screenshots (or a video) of typical user flows through your application. This includes views of the prompts and the responses after their selection.
+ cd
