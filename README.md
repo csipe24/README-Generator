@@ -28,8 +28,3 @@ Microsoft Visual Studio Code
 
 Authors
 Christopher Sipe - UW Coding Bootcamp Student
-
-
-
-
-

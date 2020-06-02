@@ -1,55 +1,80 @@
 // Generating Content for README file
 function generateMarkdown(data) {
   console.log("Generate Markdown Function Operational");
-  // Include 1 Badge'
-
   // Modular functions
-  return genTitle(title);
-  g
-  
-  # ${data.description};
-  # Table Of Contents
+  return `
+  ${genTitle(data.Title)}
+  ${genDescription(data.Description)}
+  ${genTableofContents()};
+  ${genInstallation(data.Installation)};
+  ${genUsage(data.Usage)};
+  ${genLicense(data.License)};
+  ${genContributors(data.Contributors)};
+  ${genTests(data.Tests)};
+  ${genGit(data.Github)};
+  ${genEmail(data.Email)};
+  `
+};
+
+function genTitle(Title){
+  return `# ${Title}
+  `
+};
+
+function genDescription(Description){
+  return `# ${Description}
+  `
+};
+
+function genTableofContents(){
+  return `# Table Of Contents
   1. Description
   2. Installation
   3. Usage
   4. License (Badge)
   5. Contributors
   6. Tests
-  7. GitHub Information
-  # ${data.Installation};
-  # ${data.Usage};
-  # ${data.License};
-  # ${data.Contributors};
-  # ${data.Tests};
-  # ${data.Github}
-
+  7. GitHub Information`
 };
 
-function genTitle(title){
-  return `# ${data.title}`
-}
+function genInstallation(Installation){
+  return `# ${Installation}`
+};
 
-// At least one badge
-// * Project title
-// * Description
-// * Table of Contents
-// * Installation
-// * Usage
-// * License
-// * Contributing
-// * Tests
-// * User GitHub profile picture
-// * User GitHub email
+function genUsage(Usage){
+  return `# ${Usage}`
+};
 
+function genLicense(License){
+  if (License === "MIT"){
+    return `# ${License}`
+  };
+  if (License === "GPL v3"){
+    return `# ${License}`
+  };
+  if (License === "AGPL"){
+    return `# ${License}`
+  };
+
+};
+// If Statement?
 // ReadME Badges to go raw
 
+function genContributors(Contributors){
+  return `# ${Contributors}
+  `
+};
 
+function genTests(Tests){
+  return `# ${Tests}`
+};
+
+function genGit(Github){
+  return `# ${Github}`
+};
+
+function genEmail(Email){
+  return `# ${Email}`
+};
 
 module.exports = generateMarkdown;
-
-
-
-
-// -Markdown Syntax
-// -Bold 
-// Back ticks
