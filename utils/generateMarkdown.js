@@ -5,14 +5,14 @@ function generateMarkdown(data) {
   return `
   ${genTitle(data.Title)}
   ${genDescription(data.Description)}
-  ${genTableofContents()};
-  ${genInstallation(data.Installation)};
-  ${genUsage(data.Usage)};
-  ${genLicense(data.License)};
-  ${genContributors(data.Contributors)};
-  ${genTests(data.Tests)};
-  ${genGit(data.Github)};
-  ${genEmail(data.Email)};
+  ${genTableofContents()}
+  ${genInstallation(data.Installation)}
+  ${genUsage(data.Usage)}
+  ${genLicense(data.License)}
+  ${genContributors(data.Contributors)}
+  ${genTests(data.Tests)}
+  ${genGit(data.Github)}
+  ${genEmail(data.Email)}
   `
 };
 
@@ -22,59 +22,81 @@ function genTitle(Title){
 };
 
 function genDescription(Description){
-  return `# ${Description}
+  return `# Description
+   ${Description}
+
   `
 };
 
 function genTableofContents(){
   return `# Table Of Contents
+
   1. Description
   2. Installation
   3. Usage
   4. License (Badge)
   5. Contributors
   6. Tests
-  7. GitHub Information`
-};
+  7. GitHub Information
+
+
+`
+
+}
 
 function genInstallation(Installation){
-  return `# ${Installation}`
-};
+  return `# Installation
+  ${Installation}
+  `
+}
 
 function genUsage(Usage){
-  return `# ${Usage}`
-};
+  return `# Usage
+  ${Usage}
+  `
+}
 
 function genLicense(License){
   if (License === "MIT"){
-    return `# ${License}`
+    return `# License
+    [![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs)
+    `
   };
   if (License === "GPL v3"){
-    return `# ${License}`
+    return `# License
+    [![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-yellow.svg)](https://opensource.org/licenses/)
+    `
   };
   if (License === "AGPL"){
-    return `# ${License}`
+    return `# License
+    [![AGPL License](https://img.shields.io/badge/license-AGPL-blue.svg)](http://www.gnu.org/licenses/agpl-3.0) 
+    `
   };
-
-};
-// If Statement?
-// ReadME Badges to go raw
+}
 
 function genContributors(Contributors){
-  return `# ${Contributors}
+  return `# Contributors
+  ${Contributors}
   `
-};
+}
 
 function genTests(Tests){
-  return `# ${Tests}`
-};
+  return `# Tests
+  ${Tests}
+  `
+}
 
 function genGit(Github){
-  return `# ${Github}`
-};
+  return `# Creator Profile
+   Github: ${Github}
+   ![GitHub Profile Photo](https://github.com/${Github}.png)
+   `
+}
 
 function genEmail(Email){
-  return `# ${Email}`
-};
+  return `# Creator Email
+  ${Email}
+  `
+}
 
 module.exports = generateMarkdown;

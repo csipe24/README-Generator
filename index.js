@@ -72,36 +72,8 @@ function writeToFile(fileName, data) {
 function init() {  
 inquirer.prompt(  questions )
         .then( (  response  ) => {
-            writeToFile("README1.md", response);
+            writeToFile("NEWREADME.md", response);
         } )
 };
 
 init();
-
-
-// Description : Readme Generator
-// entry point (Index.js)
-// Default test command
-// Git REPO: 
-// Keywords: README Generator
-// Author
-// License: ics
-
-// DO we need another module?
-// DO we need module exports?
-// module.exports = {
-//     pie: pie,
-//     predictable: predictable
-//   };
-  
-
-
-
-
-
-// * `node_modules` is not tracked and uploaded to GitHub. (Hint: It is easy if you create your `.gitignore` file before installing dependencies with npm.)
-
-// * Repo **MUST** include `package.json` with required dependencies. (Hint: Run `npm init` when you first setup the project before installing any dependencies.)
-
-// * Include screenshots (or a video) of typical user flows through your application. This includes views of the prompts and the responses after their selection.
- 
